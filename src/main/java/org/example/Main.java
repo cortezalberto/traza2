@@ -88,40 +88,41 @@ public class Main {
         articuloInsumoRepository.save(carne);
 
         // Crear imágenes para los artículos
-        ImagenArticulo img1 = ImagenArticulo.builder().name("Pizza1").url("http://example.com/pizza1").build();
-        ImagenArticulo img2 = ImagenArticulo.builder().name("Pizza2").url("http://example.com/pizza2").build();
-        ImagenArticulo img3 = ImagenArticulo.builder().name("Pizza3").url("http://example.com/pizza3").build();
-        ImagenArticulo img4 = ImagenArticulo.builder().name("Lomo1").url("http://example.com/lomo1").build();
-        ImagenArticulo img5 = ImagenArticulo.builder().name("Lomo2").url("http://example.com/lomo2").build();
-        ImagenArticulo img6 = ImagenArticulo.builder().name("Lomo3").url("http://example.com/lomo3").build();
+        ImagenArticulo img1 = ImagenArticulo.builder().
+                name("HawaianaPizza1").url("http://example.com/pizza1").build();
+        ImagenArticulo img2 = ImagenArticulo.builder().name("HawaianaPizza2").url("http://example.com/pizza2").build();
+        ImagenArticulo img3 = ImagenArticulo.builder().name("HawaianaPizza3").url("http://example.com/pizza3").build();
+        ImagenArticulo img4 = ImagenArticulo.builder().name("LomoCompletoLomo1").url("http://example.com/lomo1").build();
+        ImagenArticulo img5 = ImagenArticulo.builder().name("LomoCompletoLomo2").url("http://example.com/lomo2").build();
+        ImagenArticulo img6 = ImagenArticulo.builder().name("LomoCompletoLomo3").url("http://example.com/lomo3").build();
 
         // Crear detalles de artículos manufacturados
-        ArticuloManufacturadoDetalle detallePizzaHawaina1 = ArticuloManufacturadoDetalle.builder()
+        ArticuloManufacturadoDetalle detalle1PizzaHawaina = ArticuloManufacturadoDetalle.builder()
                 .cantidad(1)
                 .articuloInsumo(sal)
                 .build();
 
-        ArticuloManufacturadoDetalle detallePizzaHawaina2 = ArticuloManufacturadoDetalle.builder()
+        ArticuloManufacturadoDetalle detalle2PizzaHawaina = ArticuloManufacturadoDetalle.builder()
                 .cantidad(2)
                 .articuloInsumo(harina)
                 .build();
 
-        ArticuloManufacturadoDetalle detallePizzaHawaina3 = ArticuloManufacturadoDetalle.builder()
+        ArticuloManufacturadoDetalle detalle3PizzaHawaina = ArticuloManufacturadoDetalle.builder()
                 .cantidad(1)
                 .articuloInsumo(aceite)
                 .build();
 
-        ArticuloManufacturadoDetalle detalleLomoCompleto1 = ArticuloManufacturadoDetalle.builder()
+        ArticuloManufacturadoDetalle detalle1LomoCompleto = ArticuloManufacturadoDetalle.builder()
                 .cantidad(1)
                 .articuloInsumo(sal)
                 .build();
 
-        ArticuloManufacturadoDetalle detalleLomoCompleto2 = ArticuloManufacturadoDetalle.builder()
+        ArticuloManufacturadoDetalle detalle2LomoCompleto = ArticuloManufacturadoDetalle.builder()
                 .cantidad(1)
                 .articuloInsumo(aceite)
                 .build();
 
-        ArticuloManufacturadoDetalle detalleLomoCompleto3 = ArticuloManufacturadoDetalle.builder()
+        ArticuloManufacturadoDetalle detalle3LomoCompleto = ArticuloManufacturadoDetalle.builder()
                 .cantidad(2)
                 .articuloInsumo(carne)
                 .build();
@@ -136,7 +137,7 @@ public class Main {
                 .categoria(pizzas)
                 .unidadMedida(kg)
                 .imagenes(new HashSet<>(Set.of(img1, img2, img3)))
-                .articuloManufacturadoDetalles(new HashSet<>(Set.of(detallePizzaHawaina1, detallePizzaHawaina2, detallePizzaHawaina3)))
+                .articuloManufacturadoDetalles(new HashSet<>(Set.of(detalle1PizzaHawaina, detalle2PizzaHawaina, detalle3PizzaHawaina)))
                 .build();
 
         ArticuloManufacturado lomoCompleto = ArticuloManufacturado.builder()
@@ -148,7 +149,7 @@ public class Main {
                 .categoria(sandwiches)
                 .unidadMedida(kg)
                 .imagenes(new HashSet<>(Set.of(img4, img5, img6)))
-                .articuloManufacturadoDetalles(new HashSet<>(Set.of(detalleLomoCompleto1, detalleLomoCompleto2, detalleLomoCompleto3)))
+                .articuloManufacturadoDetalles(new HashSet<>(Set.of(detalle1LomoCompleto, detalle2LomoCompleto, detalle3LomoCompleto)))
                 .build();
 
         articuloManufacturadoRepository.save(pizzaHawaina);
@@ -185,7 +186,7 @@ public class Main {
                 .categoria(pizzas)
                 .unidadMedida(kg)
                 .imagenes(new HashSet<>(Set.of(img1, img2, img3)))
-                .articuloManufacturadoDetalles(new HashSet<>(Set.of(detallePizzaHawaina1, detallePizzaHawaina2, detallePizzaHawaina3)))
+                .articuloManufacturadoDetalles(new HashSet<>(Set.of(detalle1PizzaHawaina, detalle2PizzaHawaina, detalle3PizzaHawaina)))
                 .build();
 
         articuloManufacturadoRepository.genericUpdate(1L, pizzaHawainaActualizada);
